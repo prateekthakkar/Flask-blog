@@ -1,0 +1,23 @@
+
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "postgresql://postgres:admin@localhost/blog",
+    "prod_uri":"postgresql://postgres:admin@localhost/blog",
+    "fb_url":"https://facebook.com/geekblog",
+    "tw_url":"https://twitter.com/geekblog",
+    "gh_url": "https://github.com/geekblog",
+    "blog_name": "Geek Blog",
+    "tag_line": "Heaven for programmers",
+    "gmail-user":"your email@gmail.com",
+    "gmail-password":"your password",
+	"about_text": "Hi! my name is Geek and I create programming tutorials!",
+	"no_of_posts": 2,
+	"login_image": "login.png",
+	"admin_user": "admin",
+	"admin_password": "admin",
+	"upload_location": "C:\\Users\\HP\\Desktop\\flask\\blog\\static\\img"
+
+  }
+}

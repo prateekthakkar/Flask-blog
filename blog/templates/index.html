@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+  <!-- Page Header -->
+{% block body %}  
+  <header class="masthead" style="background-image: url(' {{url_for('static' , filename='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['blog_name']}}</h1>
+            <span class="subheading">{{params['tag_line']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <!-- Post Fetch From The Database-->
+
+        {%for post in posts %}
+        <div class="post-preview">
+          <a href="/post/{{post.slug}}">
+            <h2 class="post-title">
+              {{post.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.subtitle}}
+            </h3> 
+          </a>
+          {{post.content[0:250]}}. <a style="color: blue;" href="/post/{{post.slug}}">more</a>
+          <p class="post-meta">Posted by
+            <a href="#">{{post.author}}</a>
+            on {{post.date}}</p>
+        </div>
+        {% endfor %}
+        <!-- End -->
+
+                <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          {% if number!=0 %}
+          <a class="btn btn-primary float-left" href="{{prev}}">&larr; PREVIOUS</a>
+          {% endif %}
+          <a class="btn btn-primary float-right" href="{{next}}">NEXT &rarr;</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}  
+
+ 
